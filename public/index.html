@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dfdv</title>
+    <canvas id="canvas" width="900" height="200" style="border-radius:10px;"></canvas>
+</head>
+<body>
+    
+</body>
+<script>
+    var text ='some text here some text here some text here some text here some text here';
+    var author ='FirstName LastName';
+    var arr = text.split(" ");
+    console.log(arr);
+    var colors = ['#F5DA81','#E0F8E0'];
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext("2d");
+    
+    
+    ctx.fillStyle="#8ec191";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'blue';
+    ctx.font = "30px Arial";
+    ctx.fillText(arr[0] + " " + arr[1] +" " + arr[2],canvas.width/18, canvas.height/3);
+    let demo = '';
+    for(var i=3;i<7;i++)
+    {
+        demo = demo  +  arr[i] + " ";
+    }
+    ctx.fillText(demo,canvas.width/18, canvas.height/1.8);
+    
+    
+    
+    for(var i=7;i<arr.length;i++)
+    {
+        demo = demo  +  arr[i] + " ";
+    }
+    ctx.fillText(demo,canvas.width/18, canvas.height/1.3);
+    ctx.font = "15px Arial";
+    ctx.fillStyle = 'black';
+    ctx.fillText(author,canvas.width/1.5, canvas.height/1.1);
+    
+    var fullQuality = canvas.toDataURL('image/jpeg', 1.0);
+    var dataURL = canvas.toDataURL();
+    console.log(dataURL);
+    // "data:image/png;base6
+    </script>
+</html>
